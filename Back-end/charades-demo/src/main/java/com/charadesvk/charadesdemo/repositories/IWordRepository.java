@@ -9,5 +9,5 @@ import com.charadesvk.charadesdemo.models.Word;
 
 @Repository
 public interface IWordRepository extends JpaRepository<Word, UUID> {
-
+    public Word findByWord(String word);
 }

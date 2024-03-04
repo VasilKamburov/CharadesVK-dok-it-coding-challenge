@@ -3,7 +3,7 @@ package com.charadesvk.charadesdemo.models.dtos;
 import lombok.Getter;
 
 @Getter
-public class AddWordDto {
+public class WordInnerDto {
     String word;
     String description;
 }
