@@ -1,2 +1,2 @@
-# dok-it-coding-challenge
-A simple web application with Java Spring Boot back-end and Angular front-end. 
+# CharadesVK - dok{it}-coding-challenge
+CharadesVK is a straightforward web app featuring a Java Spring Boot backend and Angular frontend. It serves as a handy tool for friends looking to enjoy a game of Charades. Users can effortlessly manage words and their definitions, adding, deleting, and modifying them as needed. The app also facilitates generating random words for players to act out during their turns, along with providing a comprehensive list of all available words and their definitions that would be of use before starting the game.
