@@ -3,6 +3,7 @@ package com.charadesvk.charadesdemo.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,6 +17,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.UUID;
+import java.util.*;
 
 import com.charadesvk.charadesdemo.models.Word;
 import com.charadesvk.charadesdemo.models.dtos.WordInnerDto;
@@ -26,6 +28,7 @@ import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.Valid;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/api/v1/words")
 public class WordController {
     @Autowired
@@ -86,12 +89,14 @@ public class WordController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> delete(
+    public ResponseEntity<Map<String, Boolean>> delete(
         @PathVariable UUID id
     ) {
         try {
             service.delete(id);
-            return ResponseEntity.status(HttpStatus.OK).body("Word deleted successfully");
+            Map<String, Boolean> response = new HashMap<>();
+		    response.put("deleted", Boolean.TRUE);
+            return ResponseEntity.status(HttpStatus.OK).body(response);
         } catch (IllegalArgumentException e) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage());
         }
