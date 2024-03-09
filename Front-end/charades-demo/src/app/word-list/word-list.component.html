@@ -1,1 +1,25 @@
-<p>word-list works!</p>
+<h2>{{ title }}: {{words.length}}</h2>
+
+<table class = "table table-striped">
+    <thead>
+        <tr>
+            <th> ID </th>
+            <th> Word</th>
+            <th> Description </th>
+            <th> Lenght</th>
+            <th> Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let word of words" >
+            <td> {{ word.id }} </td>
+            <td> {{ word.word }} </td>
+            <td> {{ word.description }} </td>
+            <td> {{ word.letterCount }} </td>
+            <td>
+                <button (click) = "updateWord(word.word)" class = "btn btn-info"> Update</button>
+                <button (click) = "deleteWord(word.id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
