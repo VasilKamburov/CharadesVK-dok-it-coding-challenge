@@ -1,1 +1,16 @@
-<p>random-word works!</p>
+<table class = "table table-striped">
+    <thead>
+        <tr>
+            <th> Word</th>
+            <th> Description </th>
+            <th> Lenght</th>
+        </tr>
+    </thead>
+    <tbody>
+        <td> {{ word.word }} </td>
+        <td> {{ word.description }} </td>
+        <td> {{ word.letterCount }} </td>
+    </tbody>
+</table>
+
+<button (click) = "getNewWord()" class = "btn btn-info"> Get new word</button>
