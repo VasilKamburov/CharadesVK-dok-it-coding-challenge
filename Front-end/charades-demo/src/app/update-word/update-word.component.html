@@ -1,1 +1,14 @@
-<p>update-word works!</p>
+<div class="col-md-6 offset-md-3">
+    <h3> Update word's description </h3>
+    <form (ngSubmit) = "onSubmit()">
+        <h3>{{word.word}}</h3>
+        <div class="form-group">
+            <label> Description</label>
+            <input type="text" class ="form-control" id = "description"
+                [(ngModel)] = "word.description" name = "description">
+        </div>
+    
+        <button class = "btn btn-success" type ="submit" style="margin-top: 22px;">Submit</button>
+    
+    </form>
+    </div> 
